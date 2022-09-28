@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background: rgb(146 159 155);
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+}
+
+.scene-container {
+  position: relative;
+}
+
+.grape-container {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.grape-img {
+  width: 48px;
+  transition: all 0.1s cubic-bezier(0, 2.19, 0.55, 1.01);
+}
+
+.grape-img:hover {
+  transform: scale(1.2);
+  cursor: grab;
+}
