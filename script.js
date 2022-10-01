@@ -2,6 +2,7 @@ const grapeRef = document.querySelector('.grape-container')
 const sceneRef = document.querySelector('.scene-container')
 const infoModalRef = document.getElementById('info-modal')
 
+let currentTextContent = null
 
 function closeInfoModal() {
   infoModalRef.style.opacity = '0'
@@ -12,7 +13,7 @@ function closeInfoModal() {
 }
 
 function addGrape({
-  top, left, info
+  top, left, infoElementId
 }) {
   const newGrape = grapeRef.cloneNode(true)
   newGrape.style.top = top
@@ -20,7 +21,11 @@ function addGrape({
   newGrape.hidden = false
 
   newGrape.onclick = (e) => {
-    infoModalRef.querySelector('.info-modal-text-content').innerHTML = info
+    if (currentTextContent) {
+      currentTextContent.hidden = true
+    }
+    currentTextContent = document.getElementById(infoElementId)
+    currentTextContent.hidden = false
     infoModalRef.showModal()
     requestAnimationFrame(() => {
       // Update styles to trigger animation transition
@@ -34,11 +39,11 @@ function addGrape({
 addGrape({
   top: '287px',
   left: '226px',
-  info: "Here's some info about grapes."
+  infoElementId: "first_grape"
 })
 
 addGrape({
   top: '440px',
   left: '181px',
-  info: "Here's a LOT more info about grapes. asdf;lkajsd; lkajsd;flk jasd;lfkj as;lkdfj ;alskdjf;alskdj"
+  infoElementId: "second_grape"
 })
