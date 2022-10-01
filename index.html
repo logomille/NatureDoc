@@ -14,11 +14,17 @@
         <div class="grape-container" hidden>
           <img draggable="false" class="grape-img" src="./grape.png"></img>
         </div>
-        <div class="info-container" hidden>
-          <div class="gradient-border info">
-            Here's some info about grapes.
+        <dialog id="info-modal">
+          <div class="info-modal-content-container">
+            <div class="info-modal-top-content">
+              <h1>Header</h1>
+              <div class="info-modal-text-content">
+                Here's some info about grapes.
+              </div>
+            </div>
+            <button onClick="closeInfoModal()">← Back</button>
           </div>
-        </div>
+        </dialog>
       </div>
     </div>
     <script src="script.js"></script>

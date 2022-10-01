@@ -1,8 +1,15 @@
 const grapeRef = document.querySelector('.grape-container')
 const sceneRef = document.querySelector('.scene-container')
-const infoRef = document.querySelector('.info-container')
+const infoModalRef = document.getElementById('info-modal')
 
-let currentInfoRef = null;
+
+function closeInfoModal() {
+  infoModalRef.style.opacity = '0'
+  infoModalRef.ontransitionend = () => {
+    infoModalRef.close()
+    infoModalRef.ontransitionend = null
+  }
+}
 
 function addGrape({
   top, left, info
@@ -13,21 +20,11 @@ function addGrape({
   newGrape.hidden = false
 
   newGrape.onclick = (e) => {
-    const newInfo = infoRef.cloneNode(true)
-    newInfo.querySelector('.info').innerHTML = info
-    newInfo.style.left = `calc(${newGrape.style.left} + 32px)`
-    newInfo.style.top = `calc(${newGrape.style.top} + 32px)`
-    newInfo.hidden = false
-
-    // Delete the old info
-    if (currentInfoRef) { currentInfoRef.remove() }
-    currentInfoRef = newInfo
-
-    sceneRef.appendChild(newInfo)
+    infoModalRef.querySelector('.info-modal-text-content').innerHTML = info
+    infoModalRef.showModal()
     requestAnimationFrame(() => {
       // Update styles to trigger animation transition
-      newInfo.style.opacity = '100%'
-      newInfo.style.transform = 'scale(1)'
+      infoModalRef.style.opacity = '100%'
     })
   }
 

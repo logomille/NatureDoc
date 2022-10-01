@@ -29,48 +29,37 @@ body {
   cursor: grab;
 }
 
-.info-container {
-  position: absolute;
-  padding: 8px;
+#info-modal {
+  width: 80%;
+  height: 80%;
   color: white;
-  max-width: 200px;
-  opacity: 0;
-  transform: scale(0);
+  border: 2px solid rgb(1 45 48);
+  border-radius: 8px;
+  background: rgb(0 99 96 / 90%);
   transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
 }
 
-.info {
-  padding: 8px;
-  background: #4287f5;
+#info-modal::backdrop {
+  opacity: 0;
 }
 
-/* Cool gradient border I got from https://speckyboy.com/css-border-effects/ */
-.gradient-border {
-  --borderWidth: 3px;
-  position: relative;
-  border-radius: var(--borderWidth);
+.info-modal-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
 }
-.gradient-border:after {
-  content: '';
-  position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
-  z-index: -1;
-  animation: animatedgradient 3s ease alternate infinite;
-  background-size: 300% 300%;
+
+.info-modal-top-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: 12px;
 }
-@keyframes animatedgradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+.info-modal-text-content {
+  overflow: auto;
 }
