@@ -13,12 +13,16 @@ function closeInfoModal() {
 }
 
 function addGrape({
-  top, left, infoElementId
+  top, left, infoElementId, imgSrc, width
 }) {
   const newGrape = grapeRef.cloneNode(true)
   newGrape.style.top = top
   newGrape.style.left = left
   newGrape.hidden = false
+
+  const grapeImg = newGrape.querySelector('.grape-img')
+  grapeImg.src = imgSrc
+  grapeImg.style.width = width
 
   newGrape.onclick = (e) => {
     if (currentTextContent) {
@@ -39,11 +43,15 @@ function addGrape({
 addGrape({
   top: '287px',
   left: '226px',
-  infoElementId: "first_grape"
+  infoElementId: 'first_grape',
+  imgSrc: './grapebunch.png',
+  width: '66px'
 })
 
 addGrape({
   top: '440px',
   left: '181px',
-  infoElementId: "second_grape"
+  infoElementId: 'second_grape',
+  imgSrc: './grape.png',
+  width: '48px'
 })

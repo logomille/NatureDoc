@@ -20,7 +20,6 @@ body {
 }
 
 .grape-img {
-  width: 48px;
   transition: all 0.1s cubic-bezier(0, 2.19, 0.55, 1.01);
 }
 
