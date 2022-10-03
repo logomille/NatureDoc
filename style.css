@@ -67,6 +67,10 @@ body {
   max-width: 100%;
 }
 
+.info-modal-text-content p {
+  word-break: break-word;
+}
+
 #floatedleft{
     float: left;
 	margin-right: 10px;
