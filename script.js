@@ -41,25 +41,49 @@ function addGrape({
 }
 
 addGrape({
-  top: '287px',
-  left: '226px',
+  top: '300px',
+  left: '45px',
+  infoElementId: 'button',
+  imgSrc: './button.png',
+  width: '100px'
+})
+
+addGrape({
+  top: '370px',
+  left: '287px',
+  infoElementId: 'grape_single',
+  imgSrc: './grape.png',
+  width: '50px'
+})
+
+addGrape({
+  top: '452px',
+  left: '170px',
   infoElementId: 'first_grape',
   imgSrc: './grapebunch.png',
-  width: '66px'
+  width: '100px'
 })
 
 addGrape({
-  top: '440px',
-  left: '181px',
+  top: '730px',
+  left: '270px',
   infoElementId: 'second_grape',
-  imgSrc: './grapebunch.png',
-  width: '48px'
+  imgSrc: './grapebunch2.png',
+  width: '100px'
 })
 
 addGrape({
-  top: '200px',
-  left: '181px',
+  top: '980px',
+  left: '190px',
   infoElementId: 'third_grape',
-  imgSrc: './grapebunch.png',
-  width: '48px'
+  imgSrc: './grapebunch3.png',
+  width: '110px'
+})
+
+addGrape({
+  top: '1300px',
+  left: '275px',
+  infoElementId: 'fourth_grape',
+  imgSrc: './grape.png',
+  width: '50px'
 })
