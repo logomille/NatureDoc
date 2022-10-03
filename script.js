@@ -52,6 +52,14 @@ addGrape({
   top: '440px',
   left: '181px',
   infoElementId: 'second_grape',
-  imgSrc: './grape.png',
+  imgSrc: './grapebunch.png',
+  width: '48px'
+})
+
+addGrape({
+  top: '200px',
+  left: '181px',
+  infoElementId: 'third_grape',
+  imgSrc: './grapebunch.png',
   width: '48px'
 })
