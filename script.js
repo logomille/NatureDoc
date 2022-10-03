@@ -31,6 +31,7 @@ function addGrape({
     currentTextContent = document.getElementById(infoElementId)
     currentTextContent.hidden = false
     infoModalRef.showModal()
+    document.querySelector('.info-modal-text-content').scrollTop = 0;
     requestAnimationFrame(() => {
       // Update styles to trigger animation transition
       infoModalRef.style.opacity = '100%'
