@@ -62,6 +62,10 @@ body {
   overflow: auto;
 }
 
+.info-modal-text-content img {
+    max-width: 100%;
+}
+
 #floatedleft{
     float: left;
 	margin-right: 10px;
